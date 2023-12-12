@@ -4,6 +4,9 @@
     <Compile Update="cafteria_manage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="dingdan.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="login.cs">
       <SubType>Form</SubType>
     </Compile>
