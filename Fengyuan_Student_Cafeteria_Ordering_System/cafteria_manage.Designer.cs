@@ -33,13 +33,13 @@
             tabPage1 = new TabPage();
             dingdan = new TabPage();
             groupBox1 = new GroupBox();
+            label1 = new Label();
+            comboBox1 = new ComboBox();
             dingdan_lst = new ListView();
             订单号 = new ColumnHeader();
             餐食号 = new ColumnHeader();
             窗口号 = new ColumnHeader();
             订单状态 = new ColumnHeader();
-            comboBox1 = new ComboBox();
-            label1 = new Label();
             tabControl1.SuspendLayout();
             dingdan.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -89,6 +89,25 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "全部订单";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(1010, 163);
+            label1.Name = "label1";
+            label1.Size = new Size(158, 31);
+            label1.TabIndex = 2;
+            label1.Text = "选择订单类型";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "全部订单", "新订单", "已接餐", "待取餐", "售后单" });
+            comboBox1.Location = new Point(1010, 214);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(242, 39);
+            comboBox1.TabIndex = 1;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
             // dingdan_lst
             // 
             dingdan_lst.Columns.AddRange(new ColumnHeader[] { 订单号, 餐食号, 窗口号, 订单状态 });
@@ -121,25 +140,6 @@
             // 
             订单状态.Text = "订单状态";
             订单状态.Width = 150;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "全部订单", "新订单", "已接餐", "售后单" });
-            comboBox1.Location = new Point(1010, 214);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(242, 39);
-            comboBox1.TabIndex = 1;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(1010, 163);
-            label1.Name = "label1";
-            label1.Size = new Size(158, 31);
-            label1.TabIndex = 2;
-            label1.Text = "选择订单类型";
             // 
             // cafteria_manage
             // 
