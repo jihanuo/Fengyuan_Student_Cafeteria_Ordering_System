@@ -87,5 +87,15 @@ namespace Fengyuan_Student_Cafeteria_Ordering_System
 
             };
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dingdan_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
