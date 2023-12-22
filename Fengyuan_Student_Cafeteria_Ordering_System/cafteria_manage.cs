@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Fengyuan_Student_Cafeteria_Ordering_System
@@ -73,6 +74,22 @@ namespace Fengyuan_Student_Cafeteria_Ordering_System
                     dingdan_lst.Items.Add(myitem);
                 }
                 dingdan_lst.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            }
+            if (tabControl1.SelectedTab.Name == "caipin")
+            {
+                string sqlstr = string.Format("select * from 餐食表;");
+                DataTable dt = data_work.DataQuery(sqlstr);
+                caipin_lst.Items.Clear();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    ListViewItem myitem = new ListViewItem(dr["编号"].ToString());
+                    myitem.SubItems.Add(dr["菜品"].ToString());
+                    myitem.SubItems.Add(dr["价格"].ToString());
+                    myitem.SubItems.Add(dr["制作时长"].ToString());
+
+                    caipin_lst.Items.Add(myitem);
+                }
+                caipin_lst.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             }
 
         }
@@ -174,5 +191,32 @@ namespace Fengyuan_Student_Cafeteria_Ordering_System
             }
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            menu_edit menu_Edit = new menu_edit();
+            menu_Edit.ShowDialog();
+        }
+
+        private void dingdan_lst_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private  void caipin_lst_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (caipin_lst.SelectedItems.Count > 0)
+            {
+                ListViewItem selected_item = caipin_lst.SelectedItems[0];
+
+                menu_edit menu_Edit = new menu_edit(selected_item);
+                menu_Edit.Show();
+            }
+        }
+
+        private  void button2_Click(object sender, EventArgs e)
+        {
+              
+        }
     }
-}
+    }
