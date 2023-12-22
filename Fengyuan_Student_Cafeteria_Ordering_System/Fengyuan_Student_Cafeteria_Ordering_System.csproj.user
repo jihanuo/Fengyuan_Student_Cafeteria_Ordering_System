@@ -10,6 +10,9 @@
     <Compile Update="login.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="menu_edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="register.cs">
       <SubType>Form</SubType>
     </Compile>
