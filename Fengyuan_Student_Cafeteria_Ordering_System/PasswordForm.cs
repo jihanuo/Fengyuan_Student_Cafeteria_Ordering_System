@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fengyuan_Student_Cafeteria_Ordering_System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,6 @@ namespace Studentssystem
 {
     public partial class PasswordForm : Form
     {
-        OleDbConnection conn = new OleDbConnection(string.Format("provider=SQLOLEDB;Data Source={0};Initial Catalog={1};Uid={2};Pwd={3}", SqlServerHelp.ComputeName, SqlServerHelp.DataBaseName, SqlServerHelp.UserName, SqlServerHelp.PassWord));
 
         public PasswordForm()
         {
@@ -30,9 +30,9 @@ namespace Studentssystem
 
             try
             {
-                OleDbCommand cmd1 = new OleDbCommand(sql1, conn);
-                conn.Open();
-                object reader = cmd1.ExecuteScalar();
+
+
+                object reader = data_work.DataQuery(sql1);
 
                 if (reader == null)
                 {
@@ -45,9 +45,7 @@ namespace Studentssystem
                 else
                 {
                     string sql2 = string.Format("update Student set 密码 = '{0}' where 学号 = '{1}' ", txtNewPassword.Text, rNo);
-                    OleDbCommand cmd2 = new OleDbCommand(sql2, conn);
-                    object reader1 = cmd2.ExecuteScalar();
-
+                    object reader1 = data_work.DataQuery(sql2);
                     if (reader == null)
                     {
                         MessageBox.Show("修改失败");
