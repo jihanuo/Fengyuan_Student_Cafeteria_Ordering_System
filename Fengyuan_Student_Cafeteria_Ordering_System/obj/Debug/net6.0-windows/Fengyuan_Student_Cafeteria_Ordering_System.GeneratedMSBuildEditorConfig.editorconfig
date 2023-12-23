@@ -14,4 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Fengyuan_Student_Cafeteria_Ordering_System
-build_property.ProjectDir = E:\onedrive\OneDrive - MSFT\桌面\丰园点餐系统\Fengyuan_Student_Cafeteria_Ordering_System\
+build_property.ProjectDir = D:\Fengyuan_Student_Cafeteria_Ordering_System\Fengyuan_Student_Cafeteria_Ordering_System\Fengyuan_Student_Cafeteria_Ordering_System\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
