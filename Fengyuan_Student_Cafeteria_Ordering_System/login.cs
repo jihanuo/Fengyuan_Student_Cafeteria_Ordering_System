@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Fengyuan_Student_Cafeteria_Ordering_System;
 
 namespace login
 {
@@ -31,28 +32,6 @@ namespace login
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            string userName = textBox1.Text;
-            string userPwd = textBox2.Text;
-            string connStr = "server=DESKTOP-KP99S2Q;database=People;uid=sa;pwd=200299";
-            
-            //***************************************采用混合身份验证,在这里更改sql连接信息********************************************************
-
-            SqlConnection conn = new SqlConnection(connStr);
-            conn.Open();
-            string sql = "select * from dbo.yonghu where 账号=@t1 and 密码=@t2 ";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.Add("@t1", SqlDbType.VarChar).Value = userName;
-            cmd.Parameters.Add("@t2", SqlDbType.VarChar).Value = userPwd;
-
-            //填入查询条件
-
-            object result = cmd.ExecuteScalar();
-
-            //result为查询返回值
-
-            //此处检查账号和密码是否为空
-
             if (textBox1.Text == "")
             {
                 MessageBox.Show("用户名不能为空！");
@@ -69,18 +48,35 @@ namespace login
                 return;
             }
 
+            string userName = textBox1.Text;
+            string userPwd = textBox2.Text;
+
+            //***************************************采用混合身份验证,在这里更改sql连接信息********************************************************
+
+            string sql = string.Format("select * from 用餐用户 where 账号='{0}' and 密码='{1}' ", userName, userPwd);
+            //填入查询条件
+
+            DataTable user_info = data_work.DataQuery(sql);
+
+            //result为查询返回值
+
+            //此处检查账号和密码是否为空
+
+
+
             //有返回值则登录成功，没有则提示错误↓
 
-            if (result != null && result != DBNull.Value)
+            if (user_info != null)
             {
-                int count = Convert.ToInt32(result);
-                if (count > 0)
+                string user_id = user_info.Rows[0]["账号"].ToString();
+
+                if (user_id != null)
                 {
-                    progress Form2 = new progress();
+                    Fengyuan_Student_Cafeteria_Ordering_System.user Form2 = new Fengyuan_Student_Cafeteria_Ordering_System.user(user_id);
                     userName = textBox1.Text;
                     userPwd = textBox2.Text;
-                    Form2.Show();//登录成功显示的下一个页面
-                    MessageBox.Show("欢迎进入！", "登陆成功！", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    Form2.Show();//登录成功显示的下一个页面               
                 }
                 else
                 {
@@ -95,7 +91,6 @@ namespace login
                 textBox1.Text = "";
                 textBox2.Text = "";
             }
-            conn.Close();
         }
 
         //连接到注册界面

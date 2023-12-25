@@ -26,49 +26,43 @@ namespace Studentssystem
             string rNo = txtNo.Text;
             string pw = txtoldPassword.Text;
 
-            string sql1 = "select * from Student where 学号 = '" + rNo + "' and 密码 = '" + pw + "'";
+            string sql1 = string.Format("select * from 用餐用户 where 账号 = '{0}' and 密码 ='{1}'", rNo, pw);
+            object reader = data_work.DataQuery(sql1);
 
-            try
+            if (reader == null)
             {
-
-
-                object reader = data_work.DataQuery(sql1);
-
-                if (reader == null)
+                MessageBox.Show("学生编号或者原密码输入错误！请重新输入");
+                txtNo.Text = string.Empty;
+                txtoldPassword.Text = string.Empty;
+                txtNewPassword.Text = string.Empty;
+                return;
+            }
+            else
+            {
+                string sql2 = string.Format("update 用餐用户 set 密码 = '{0}' where 账号 = '{1}' ", txtNewPassword.Text, rNo);
+                int i = data_work.DataExcute(sql2);
+                if (i == 1)
                 {
-                    MessageBox.Show("学生编号或者原密码输入错误！请重新输入");
-                    txtNo.Text = string.Empty;
-                    txtoldPassword.Text = string.Empty;
-                    txtNewPassword.Text = string.Empty;
-                    return;
+                    MessageBox.Show("修改成功!");
                 }
                 else
                 {
-                    string sql2 = string.Format("update Student set 密码 = '{0}' where 学号 = '{1}' ", txtNewPassword.Text, rNo);
-                    object reader1 = data_work.DataQuery(sql2);
-                    if (reader == null)
-                    {
-                        MessageBox.Show("修改失败");
-                        txtNo.Text = string.Empty;
-                        txtoldPassword.Text = string.Empty;
-                        txtNewPassword.Text = string.Empty;
-                    }
-                    else
-                    {
-                        MessageBox.Show("修改成功!");
-                    }
+                    MessageBox.Show("修改失败");
+                    txtNo.Text = string.Empty;
+                    txtoldPassword.Text = string.Empty;
+                    txtNewPassword.Text = string.Empty;
                 }
-            }
-            catch { }
-            finally
-            {
-                conn.Close();
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void PasswordForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

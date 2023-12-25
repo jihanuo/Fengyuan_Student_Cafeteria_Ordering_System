@@ -8,9 +8,10 @@ using System.Data.SqlClient;
 
 namespace Fengyuan_Student_Cafeteria_Ordering_System
 {
+
     class data_work
     {
-        static string connstr = "Data Source=CAMELLIA;User ID=sa;Password=1234;database=12346";
+        static string connstr = "Data Source=.\\SQLEXPRESS;User ID=sa;Password=1234;database=DATA";
         public static DataTable DataQuery(string str)//数据查询，输入参数为查询语句，返回数据表
         {
             SqlConnection conn = new SqlConnection(connstr);

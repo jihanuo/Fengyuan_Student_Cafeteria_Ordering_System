@@ -28,107 +28,116 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtoldPassword = new System.Windows.Forms.TextBox();
-            this.txtNo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNewPassword = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            txtoldPassword = new TextBox();
+            txtNo = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            txtNewPassword = new TextBox();
+            label3 = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            SuspendLayout();
             // 
             // txtoldPassword
             // 
-            this.txtoldPassword.Location = new System.Drawing.Point(71, 50);
-            this.txtoldPassword.Name = "txtoldPassword";
-            this.txtoldPassword.PasswordChar = '*';
-            this.txtoldPassword.Size = new System.Drawing.Size(221, 21);
-            this.txtoldPassword.TabIndex = 14;
+            txtoldPassword.Location = new Point(166, 129);
+            txtoldPassword.Margin = new Padding(7, 8, 7, 8);
+            txtoldPassword.Name = "txtoldPassword";
+            txtoldPassword.PasswordChar = '*';
+            txtoldPassword.Size = new Size(510, 38);
+            txtoldPassword.TabIndex = 14;
             // 
             // txtNo
             // 
-            this.txtNo.Location = new System.Drawing.Point(71, 12);
-            this.txtNo.Name = "txtNo";
-            this.txtNo.Size = new System.Drawing.Size(221, 21);
-            this.txtNo.TabIndex = 13;
+            txtNo.Location = new Point(166, 31);
+            txtNo.Margin = new Padding(7, 8, 7, 8);
+            txtNo.Name = "txtNo";
+            txtNo.Size = new Size(510, 38);
+            txtNo.TabIndex = 13;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "原密码：";
+            label2.AutoSize = true;
+            label2.Location = new Point(33, 137);
+            label2.Margin = new Padding(7, 0, 7, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(110, 31);
+            label2.TabIndex = 12;
+            label2.Text = "原密码：";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 12);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "学号:";
+            label1.AutoSize = true;
+            label1.Location = new Point(33, 39);
+            label1.Margin = new Padding(7, 0, 7, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(68, 31);
+            label1.TabIndex = 11;
+            label1.Text = "账号:";
             // 
             // txtNewPassword
             // 
-            this.txtNewPassword.Location = new System.Drawing.Point(71, 83);
-            this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.PasswordChar = '*';
-            this.txtNewPassword.Size = new System.Drawing.Size(221, 21);
-            this.txtNewPassword.TabIndex = 16;
+            txtNewPassword.Location = new Point(166, 214);
+            txtNewPassword.Margin = new Padding(7, 8, 7, 8);
+            txtNewPassword.Name = "txtNewPassword";
+            txtNewPassword.PasswordChar = '*';
+            txtNewPassword.Size = new Size(510, 38);
+            txtNewPassword.TabIndex = 16;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 86);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 12);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "新密码：";
+            label3.AutoSize = true;
+            label3.Location = new Point(33, 222);
+            label3.Margin = new Padding(7, 0, 7, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(110, 31);
+            label3.TabIndex = 15;
+            label3.Text = "新密码：";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(58, 129);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "修改";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Location = new Point(135, 333);
+            button1.Margin = new Padding(7, 8, 7, 8);
+            button1.Name = "button1";
+            button1.Size = new Size(175, 59);
+            button1.TabIndex = 17;
+            button1.Text = "修改";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(204, 129);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "取消";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.Location = new Point(476, 333);
+            button2.Margin = new Padding(7, 8, 7, 8);
+            button2.Name = "button2";
+            button2.Size = new Size(175, 59);
+            button2.TabIndex = 18;
+            button2.Text = "取消";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // PasswordForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 156);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtNewPassword);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtoldPassword);
-            this.Controls.Add(this.txtNo);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "PasswordForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "PasswordForm";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(14F, 31F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(727, 444);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(txtNewPassword);
+            Controls.Add(label3);
+            Controls.Add(txtoldPassword);
+            Controls.Add(txtNo);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Margin = new Padding(7, 8, 7, 8);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "PasswordForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "修改密码";
+            Load += PasswordForm_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

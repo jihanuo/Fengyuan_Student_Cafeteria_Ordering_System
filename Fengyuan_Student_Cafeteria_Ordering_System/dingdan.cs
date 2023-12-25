@@ -44,15 +44,6 @@ namespace Fengyuan_Student_Cafeteria_Ordering_System
 
         }
 
-        private void dingdan_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)//接单
         {
 
@@ -62,17 +53,6 @@ namespace Fengyuan_Student_Cafeteria_Ordering_System
             {
                 MessageBox.Show(i.ToString());
             }
-            //计算时间 
-            string sql_str1 = string.Format("select 订单.订单号, 订单.餐食号,餐食.制作时长 from 订单,餐食 where 订单.窗口号='{0}'and 订单.订单状态=‘1’", label3.Text);
-            DataTable time_dt = data_work.DataQuery(sql_str1);
-            float total_time = 0;
-            Dictionary<string, float> time_Dict = new Dictionary<string, float>();
-            foreach (DataRow dr in time_dt.Rows)
-            {
-                total_time += (float)dr["制作时长"];
-                time_Dict[dr["订单号"].ToString()] = total_time;
-            }
-
         }
 
         private void button2_Click(object sender, EventArgs e)// 出餐

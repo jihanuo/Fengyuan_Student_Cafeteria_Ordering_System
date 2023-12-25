@@ -19,7 +19,11 @@ namespace Fengyuan_Student_Cafeteria_Ordering_System
         {
             InitializeComponent();
         }
-
+        public cafteria_manage(string win_id)
+        {
+            this.Tag = win_id;
+            InitializeComponent();
+        }
         private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
         {
 
@@ -44,7 +48,7 @@ namespace Fengyuan_Student_Cafeteria_Ordering_System
         {
             if (tabControl1.SelectedTab.Name == "dingdan")// 默认显示全部订单
             {
-                string sqlstr = string.Format("select * from 订单 where 窗口号 ='window1' and 订单状态 <> '4' ;");//需绑定登录部分数据，暂设为1
+                string sqlstr = string.Format("select * from 订单 where 窗口号 ='{0}' and 订单状态 <> '4' ;", this.Tag);//需绑定登录部分数据，暂设为1
                 DataTable dt = data_work.DataQuery(sqlstr);
                 dingdan_lst.Items.Clear();
                 foreach (DataRow dr in dt.Rows)
@@ -77,14 +81,14 @@ namespace Fengyuan_Student_Cafeteria_Ordering_System
             }
             if (tabControl1.SelectedTab.Name == "caipin")
             {
-                string sqlstr = string.Format("select * from 餐食表;");
+                string sqlstr = string.Format("select * from 餐食 where 窗口号 ='{0}';", this.Tag);
                 DataTable dt = data_work.DataQuery(sqlstr);
                 caipin_lst.Items.Clear();
                 foreach (DataRow dr in dt.Rows)
                 {
-                    ListViewItem myitem = new ListViewItem(dr["编号"].ToString());
-                    myitem.SubItems.Add(dr["菜品"].ToString());
-                    myitem.SubItems.Add(dr["价格"].ToString());
+                    ListViewItem myitem = new ListViewItem(dr["餐食号"].ToString());
+                    myitem.SubItems.Add(dr["餐食名称"].ToString());
+                    myitem.SubItems.Add(dr["餐食价格"].ToString());
                     myitem.SubItems.Add(dr["制作时长"].ToString());
 
                     caipin_lst.Items.Add(myitem);
@@ -95,7 +99,7 @@ namespace Fengyuan_Student_Cafeteria_Ordering_System
         }
         protected void DataBind_dingdan_info(int i = 0)//i表示不同的订单状态，根据订单状态展示相应信息
         {
-            string sqlstr = string.Format("select * from 订单 where 窗口号 ='window1'and 订单状态 ={0} ;", i);//需绑定登录部分数据，暂设为1
+            string sqlstr = string.Format("select * from 订单 where 窗口号 ='{0}'and 订单状态 ={1} ;", this.Tag, i);//需绑定登录部分数据，暂设为1
             DataTable dt = data_work.DataQuery(sqlstr);
             dingdan_lst.Items.Clear();
             foreach (DataRow dr in dt.Rows)
@@ -133,7 +137,7 @@ namespace Fengyuan_Student_Cafeteria_Ordering_System
         {
             if (comboBox1.Text == "全部订单")
             {
-                string sqlstr = string.Format("select * from 订单 where 窗口号 = 'window1'and 订单状态 <> '4';");//需绑定登录部分数据，暂设为1
+                string sqlstr = string.Format("select * from 订单 where 窗口号 = '{0}'and 订单状态 <> '4';", this.Tag);
                 DataTable dt = data_work.DataQuery(sqlstr);
                 dingdan_lst.Items.Clear();
                 foreach (DataRow dr in dt.Rows)
@@ -200,10 +204,16 @@ namespace Fengyuan_Student_Cafeteria_Ordering_System
 
         private void dingdan_lst_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (dingdan_lst.SelectedItems.Count > 0)
+            {
+                ListViewItem selected_item = dingdan_lst.SelectedItems[0];
 
+                dingdan dingdan = new dingdan(selected_item);
+                dingdan.Show();
+            }
         }
 
-        private  void caipin_lst_SelectedIndexChanged(object sender, EventArgs e)
+        private void caipin_lst_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (caipin_lst.SelectedItems.Count > 0)
             {
@@ -214,9 +224,24 @@ namespace Fengyuan_Student_Cafeteria_Ordering_System
             }
         }
 
-        private  void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-              
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cafteria_manage_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dingdan_Click(object sender, EventArgs e)
+        {
+
         }
     }
-    }
+}

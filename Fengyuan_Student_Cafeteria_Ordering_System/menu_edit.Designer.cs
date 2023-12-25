@@ -28,149 +28,171 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.菜品 = new System.Windows.Forms.TextBox();
-            this.价格 = new System.Windows.Forms.TextBox();
-            this.制作时长 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            菜品 = new TextBox();
+            价格 = new TextBox();
+            制作时长 = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            label4 = new Label();
+            label5 = new Label();
+            button3 = new Button();
+            introduce = new TextBox();
+            introduce_label = new Label();
+            SuspendLayout();
             // 
             // 菜品
             // 
-            this.菜品.Location = new System.Drawing.Point(88, 45);
-            this.菜品.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.菜品.Name = "菜品";
-            this.菜品.Size = new System.Drawing.Size(97, 23);
-            this.菜品.TabIndex = 0;
+            菜品.Location = new Point(243, 205);
+            菜品.Margin = new Padding(4, 4, 4, 4);
+            菜品.Name = "菜品";
+            菜品.Size = new Size(190, 38);
+            菜品.TabIndex = 0;
+            菜品.TextChanged += 菜品_TextChanged;
             // 
             // 价格
             // 
-            this.价格.Location = new System.Drawing.Point(88, 94);
-            this.价格.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.价格.Name = "价格";
-            this.价格.Size = new System.Drawing.Size(97, 23);
-            this.价格.TabIndex = 1;
+            价格.Location = new Point(627, 198);
+            价格.Margin = new Padding(4, 4, 4, 4);
+            价格.Name = "价格";
+            价格.Size = new Size(225, 38);
+            价格.TabIndex = 1;
             // 
             // 制作时长
             // 
-            this.制作时长.Location = new System.Drawing.Point(88, 144);
-            this.制作时长.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.制作时长.Name = "制作时长";
-            this.制作时长.Size = new System.Drawing.Size(97, 23);
-            this.制作时长.TabIndex = 2;
+            制作时长.Location = new Point(243, 297);
+            制作时长.Margin = new Padding(4, 4, 4, 4);
+            制作时长.Name = "制作时长";
+            制作时长.Size = new Size(190, 38);
+            制作时长.TabIndex = 2;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 47);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "菜品";
+            label1.AutoSize = true;
+            label1.Location = new Point(105, 205);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(62, 31);
+            label1.TabIndex = 3;
+            label1.Text = "菜品";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 96);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "价格";
+            label2.AutoSize = true;
+            label2.Location = new Point(519, 205);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(62, 31);
+            label2.TabIndex = 4;
+            label2.Text = "价格";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 146);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "制作时长";
+            label3.AutoSize = true;
+            label3.Location = new Point(105, 304);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(110, 31);
+            label3.TabIndex = 5;
+            label3.Text = "制作时长";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(228, 142);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 24);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "添加";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Location = new Point(660, 480);
+            button1.Margin = new Padding(4, 4, 4, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(142, 44);
+            button1.TabIndex = 6;
+            button1.Text = "添加";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(228, 91);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 24);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "删除";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            button2.Location = new Point(391, 482);
+            button2.Margin = new Padding(4, 4, 4, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(142, 44);
+            button2.TabIndex = 7;
+            button2.Text = "删除";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click_1;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 18);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 17);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "编号";
+            label4.AutoSize = true;
+            label4.Location = new Point(105, 111);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(62, 31);
+            label4.TabIndex = 8;
+            label4.Text = "编号";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(98, 18);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 17);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "label5";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            label5.AutoSize = true;
+            label5.Location = new Point(258, 111);
+            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(82, 31);
+            label5.TabIndex = 9;
+            label5.Text = "label5";
+            label5.Click += label5_Click;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(224, 47);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "编辑";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.Location = new Point(136, 484);
+            button3.Margin = new Padding(6, 5, 6, 5);
+            button3.Name = "button3";
+            button3.Size = new Size(150, 42);
+            button3.TabIndex = 10;
+            button3.Text = "编辑";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // introduce
+            // 
+            introduce.Location = new Point(627, 297);
+            introduce.Name = "introduce";
+            introduce.Size = new Size(225, 38);
+            introduce.TabIndex = 11;
+            introduce.TextChanged += introduce_TextChanged;
+            // 
+            // introduce_label
+            // 
+            introduce_label.AutoSize = true;
+            introduce_label.Location = new Point(519, 304);
+            introduce_label.Name = "introduce_label";
+            introduce_label.Size = new Size(62, 31);
+            introduce_label.TabIndex = 12;
+            introduce_label.Text = "介绍";
             // 
             // menu_edit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 231);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.制作时长);
-            this.Controls.Add(this.价格);
-            this.Controls.Add(this.菜品);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "menu_edit";
-            this.Text = "menu_edit";
-            this.Load += new System.EventHandler(this.menu_edit_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(14F, 31F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(955, 654);
+            Controls.Add(introduce_label);
+            Controls.Add(introduce);
+            Controls.Add(button3);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(制作时长);
+            Controls.Add(价格);
+            Controls.Add(菜品);
+            Margin = new Padding(4, 4, 4, 4);
+            Name = "menu_edit";
+            Text = "menu_edit";
+            Load += menu_edit_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -186,5 +208,7 @@
         private Label label4;
         private Label label5;
         private Button button3;
+        private TextBox introduce;
+        private Label introduce_label;
     }
 }
